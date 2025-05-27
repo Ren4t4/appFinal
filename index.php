@@ -1,3 +1,18 @@
+<?php
+$servidor = "localhost";
+$usuario = "root";
+$contrasena = "";
+$basedatos = "escuela";
+
+// Crear conexión
+$conexion = new mysqli($servidor, $usuario, $contrasena, $basedatos);
+
+// Verificar conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
+
+// Consulta para obtener registros existentes
 $sql = "SELECT nombre, materia, calificacion FROM registros";
 $resultado = $conexion->query($sql);
 ?>
@@ -46,3 +61,4 @@ $resultado = $conexion->query($sql);
 
 </body>
 </html>
+
